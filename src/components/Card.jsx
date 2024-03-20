@@ -1,18 +1,26 @@
-import React from 'react'
-import main from '../assets/main.jpg'
+import React, { useContext } from 'react'
+import { Cart } from '../context/Context'
 
-const Card = () => {
+const Card = ({ item }) => {
+    const { dish, setDish } = useContext(Cart);
     return (
         <div>
-            <img src={main} alt="main" />
+            <img src={item.strMealThumb} alt={item.strMeal} className='w-full' />
             <div className='px-2'>
-                <h4 className='font-bold my-2 text-red-600'>Lorem ipsum dolor sit.</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In atque iure nihil asperiores quas ipsum minus illum necessitatibus harum amet!</p>
-                <div className='flex justify-between items-center'>
-                    <p className='mt-2'>⭐ <span className='text-red-600 font-bold'>4.5</span></p>
-                    <p><span className='text-red-600 font-bold text-3xl'>150</span>$</p>
+                <h4 className='font-bold my-2 text-red-600'>{item.strMeal.substr(0, 100)}...</h4>
+                <p>{item.strInstructions.substr(0, 100)}...</p>
+                <div className='mb-4'>
+                    <p className='my-2'>Category: <span className='text-red-600 font-bold'>{item.strCategory}</span></p>
+                    <p>Price: <span className='text-red-600 font-bold'>{item.idMeal}</span>$</p>
                 </div>
-                <button className='uppercase py-1 bg-red-600 w-max my-4 px-2 text-white'>Add to Cart</button>
+
+                {
+                    dish.includes(item) ? (
+                        <button className='uppercase block w-full py-1 bg-red-600 text-center px-2 text-white' onClick={() => setDish(dish.filter((c) => c.idMeal !== item.idMeal))}>Remove to Cart</button>
+                    ) : (
+                        <button className='uppercase block w-full py-1 bg-black text-center px-2 text-white' onClick={() => setDish([...dish, item])}>Add to Cart</button>
+                    )
+                }
             </div>
         </div>
     )

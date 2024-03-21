@@ -18,10 +18,14 @@ const Category = () => {
 
     useEffect(() => {
         fetchData(`${API}/categories.php`);
+    }, []);
+
+    useEffect(() => {
+        document.title = 'Category';
     }, [])
 
     return (
-        <div className='grid grid-cols-4 gap-4 my-8'>
+        <div className='grid grid-cols-2 lg:grid-cols-4 sm:grid-cols-3 gap-6 my-8'>
             {
                 dishList.map((item) => {
                     return (

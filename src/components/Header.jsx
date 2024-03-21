@@ -7,7 +7,7 @@ const Header = () => {
     const { dish } = useContext(Cart);
     return (
         <nav className='px-4 max-w-full flex justify-between items-center h-[50px] mx-auto'>
-            <div><img src={logo} height={50} width={50} alt='logo' /></div>
+            <NavLink to='/' className='text-2xl'>Food <span className='text-red-600 font-bold'>X</span></NavLink>
 
             <div>
                 <ul className='flex gap-4'>

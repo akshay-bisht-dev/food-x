@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 
 export const Cart = createContext();
 
-const API = "https://www.themealdb.com/api/json/v1/1";
+export const API = "https://www.themealdb.com/api/json/v1/1";
 
 const Context = ({ children }) => {
   const [dishList, setDishList] = useState([]);

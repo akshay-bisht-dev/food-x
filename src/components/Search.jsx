@@ -26,21 +26,6 @@ const Search = () => {
             <form action="" onSubmit={(e) => e.preventDefault()}>
                 <input type="text" onChange={(e) => setQuery(e.target.value)} value={query} placeholder='Enter Your Dish' className='p-2 bg-slate-200 w-full outline-0 border-0' /><button className='uppercase py-2 bg-red-600 w-max absolute right-0 px-2 text-white' type='submit'>Submit</button>
             </form>
-
-
-
-
-
-            <div className='max-w-full mx-auto'>
-                {/* <h2 className='font-bold text-3xl text-red-600 uppercase'>Trending <span className='text-black'>Dish</span></h2> */}
-                <div className='grid grid-cols-3 gap-8 my-8'>
-                    {
-                        newQuery.map((item) => {
-                            return <Card item={item} dish={dish} setDish={setDish} key={item.idMeal} />
-                        })
-                    }
-                </div>
-            </div>
         </section>
 
 

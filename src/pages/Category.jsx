@@ -30,7 +30,7 @@ const Category = () => {
                 dishList.map((item) => {
                     return (
                         <>
-                            <NavLink to={`${API}/filter.php?c=${item.strCategory}`}>
+                            <NavLink to={`/product/${item.strCategory}`}>
                                 <div key={item.idCategory} className='border border-red-500 rounded-lg'>
                                     <img src={item.strCategoryThumb} alt={item.strCategory} className='w-full' />
                                     <div className='px-2'>

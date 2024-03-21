@@ -31,7 +31,7 @@ const Products = () => {
         <>
             <h1 className='uppercase text-center text-5xl my-4 font-bold'>All <span className='text-red-600'>Dishes</span></h1>
 
-            <section className="relative mx-auto max-w-[500px] my-2">
+            <section className="relative mx-auto max-w-[500px] my-2 z-0">
                 <form action="" onSubmit={(e) => e.preventDefault()}>
                     <input type="text" onChange={(e) => setQuery(e.target.value)} value={query} placeholder='Enter Your Dish' className='p-2 bg-slate-200 w-full outline-0 border-0' /><button className='uppercase py-2 bg-red-600 w-max absolute right-0 px-2 text-white' type='submit'>Submit</button>
                 </form>
